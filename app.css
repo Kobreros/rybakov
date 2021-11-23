@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-weight: 900;
-  font-family: 'DrukWideCyr';
-  font-style : normal;
-  src        : url('../fonts/druktextwide-super.woff2') format('woff2');
-}
 .botForm {
     width: 100%;
     max-width: 500px;
