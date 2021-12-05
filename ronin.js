@@ -1,4 +1,5 @@
 var screenSize = $(window).width();
+console.log('test :>> ');
 
 gsap.defaults({
     ease: "power2.inOut",
