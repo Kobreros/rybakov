@@ -76,13 +76,12 @@ $('.about__video-thumb, .video-modal__overlay').click(function() {
         $('body').css('overflow', 'hidden');
         gsap.to('.video-modal-wrap', { autoAlpha: 1 })
         videoOpen = true;
+        $('#video1')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
     } else if (videoOpen) {
         $('body').css('overflow', 'visible');
         gsap.to('.video-modal-wrap', { autoAlpha: 0 })
         videoOpen = false;
-        $('#video1').each(function() {
-            this.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
-        })
+        $('#video1')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
     }
 })
 
