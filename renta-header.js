@@ -1,8 +1,27 @@
-let currentLang;
-
+var currentLang;
 var userLang = navigator.language || navigator.userLanguage;
-if (!userLang.toLowerCase().includes('pt') && localStorage.getItem("lang") != "used") {
-    window.location.href = "en"
-    console.log(localStorage.getItem("lang"))
+
+// Rus to Eng
+var userLang = navigator.language || navigator.userLanguage;
+if (!userLang.toLowerCase().includes("ru") && localStorage.getItem("currentLang") != "used") {
+
+    let currentPage = document.location.href.match(/(^[^#]*)/)[0];
+    console.log("currentPage :>> ", currentPage);
+    console.log("window.location.origin :>> ", window.location.origin);
+
+    // Check main page
+    if (currentPage == window.location.origin + '/') {
+        console.log("currentPage :>> ", currentPage);
+        window.location.href = "en";
+    } else {
+        window.location.href = currentPage + "-en";
+    }
+}
+
+
+
+//Eng to Rus
+var userLang = navigator.language || navigator.userLanguage;
+if (userLang.toLowerCase().includes('ru') && localStorage.getItem("currentLang") != "used") {
+    document.location.href = "/"
 };
-console.log(localStorage.getItem("lang", currentLang))
